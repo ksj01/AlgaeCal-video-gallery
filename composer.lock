@@ -126,7 +126,7 @@
             "authors": [
                 {
                     "name": "Jordi Boggiano",
-                    "email": "j.boggiano@seld.be",
+                    "username": "j.boggiano@seld.be",
                     "homepage": "http://seld.be"
                 }
             ],
@@ -185,7 +185,7 @@
             "authors": [
                 {
                     "name": "Nikita Popov",
-                    "email": "nikic@php.net"
+                    "username": "nikic@php.net"
                 }
             ],
             "description": "Fast request router for PHP",
@@ -237,11 +237,11 @@
             "authors": [
                 {
                     "name": "Marius Sarca",
-                    "email": "marius.sarca@gmail.com"
+                    "username": "marius.sarca@gmail.com"
                 },
                 {
                     "name": "Sorin Sarca",
-                    "email": "sarca_sorin@hotmail.com"
+                    "username": "sarca_sorin@hotmail.com"
                 }
             ],
             "description": "A library that can be used to serialize closures (anonymous functions) and arbitrary objects.",
@@ -746,7 +746,7 @@
             "authors": [
                 {
                     "name": "Ralph Khattar",
-                    "email": "ralph.khattar@gmail.com"
+                    "username": "ralph.khattar@gmail.com"
                 }
             ],
             "description": "A polyfill for getallheaders.",
@@ -798,22 +798,22 @@
             "authors": [
                 {
                     "name": "Josh Lockhart",
-                    "email": "hello@joshlockhart.com",
+                    "username": "hello@joshlockhart.com",
                     "homepage": "http://joshlockhart.com"
                 },
                 {
                     "name": "Andrew Smith",
-                    "email": "a.smith@silentworks.co.uk",
+                    "username": "a.smith@silentworks.co.uk",
                     "homepage": "http://silentworks.co.uk"
                 },
                 {
                     "name": "Rob Allen",
-                    "email": "rob@akrabat.com",
+                    "username": "rob@akrabat.com",
                     "homepage": "http://akrabat.com"
                 },
                 {
                     "name": "Pierre Berube",
-                    "email": "pierre@lgse.com",
+                    "username": "pierre@lgse.com",
                     "homepage": "http://www.lgse.com"
                 }
             ],
@@ -885,27 +885,27 @@
             "authors": [
                 {
                     "name": "Josh Lockhart",
-                    "email": "hello@joshlockhart.com",
+                    "username": "hello@joshlockhart.com",
                     "homepage": "https://joshlockhart.com"
                 },
                 {
                     "name": "Andrew Smith",
-                    "email": "a.smith@silentworks.co.uk",
+                    "username": "a.smith@silentworks.co.uk",
                     "homepage": "http://silentworks.co.uk"
                 },
                 {
                     "name": "Rob Allen",
-                    "email": "rob@akrabat.com",
+                    "username": "rob@akrabat.com",
                     "homepage": "http://akrabat.com"
                 },
                 {
                     "name": "Pierre Berube",
-                    "email": "pierre@lgse.com",
+                    "username": "pierre@lgse.com",
                     "homepage": "http://www.lgse.com"
                 },
                 {
                     "name": "Gabriel Manricks",
-                    "email": "gmanricks@me.com",
+                    "username": "gmanricks@me.com",
                     "homepage": "http://gabrielmanricks.com"
                 }
             ],
@@ -975,7 +975,7 @@
             "authors": [
                 {
                     "name": "Marco Pivetta",
-                    "email": "ocramius@gmail.com",
+                    "username": "ocramius@gmail.com",
                     "homepage": "http://ocramius.github.com/"
                 }
             ],
@@ -1093,17 +1093,17 @@
             "authors": [
                 {
                     "name": "Arne Blankerts",
-                    "email": "arne@blankerts.de",
+                    "username": "arne@blankerts.de",
                     "role": "Developer"
                 },
                 {
                     "name": "Sebastian Heuer",
-                    "email": "sebastian@phpeople.de",
+                    "username": "sebastian@phpeople.de",
                     "role": "Developer"
                 },
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
+                    "username": "sebastian@phpunit.de",
                     "role": "Developer"
                 }
             ],
@@ -1140,17 +1140,17 @@
             "authors": [
                 {
                     "name": "Arne Blankerts",
-                    "email": "arne@blankerts.de",
+                    "username": "arne@blankerts.de",
                     "role": "Developer"
                 },
                 {
                     "name": "Sebastian Heuer",
-                    "email": "sebastian@phpeople.de",
+                    "username": "sebastian@phpeople.de",
                     "role": "Developer"
                 },
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
+                    "username": "sebastian@phpunit.de",
                     "role": "Developer"
                 }
             ],
@@ -1192,7 +1192,7 @@
             "authors": [
                 {
                     "name": "Jaap van Otterdijk",
-                    "email": "opensource@ijaap.nl"
+                    "username": "opensource@ijaap.nl"
                 }
             ],
             "description": "Common reflection classes used by phpdocumentor to reflect the code structure",
@@ -1249,11 +1249,11 @@
             "authors": [
                 {
                     "name": "Mike van Riel",
-                    "email": "me@mikevanriel.com"
+                    "username": "me@mikevanriel.com"
                 },
                 {
                     "name": "Jaap van Otterdijk",
-                    "email": "account@ijaap.nl"
+                    "username": "account@ijaap.nl"
                 }
             ],
             "description": "With this component, a library can provide support for annotations via DocBlocks or otherwise retrieve information that is embedded in a DocBlock.",
@@ -1298,7 +1298,7 @@
             "authors": [
                 {
                     "name": "Mike van Riel",
-                    "email": "me@mikevanriel.com"
+                    "username": "me@mikevanriel.com"
                 }
             ],
             "description": "A PSR-5 based resolver of Class names, Types and Structural Element Names",
@@ -1347,12 +1347,12 @@
             "authors": [
                 {
                     "name": "Konstantin Kudryashov",
-                    "email": "ever.zet@gmail.com",
+                    "username": "ever.zet@gmail.com",
                     "homepage": "http://everzet.com"
                 },
                 {
                     "name": "Marcello Duarte",
-                    "email": "marcello.duarte@gmail.com"
+                    "username": "marcello.duarte@gmail.com"
                 }
             ],
             "description": "Highly opinionated mocking framework for PHP 5.3+",
@@ -1417,7 +1417,7 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
+                    "username": "sebastian@phpunit.de",
                     "role": "lead"
                 }
             ],
@@ -1468,7 +1468,7 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
+                    "username": "sebastian@phpunit.de",
                     "role": "lead"
                 }
             ],
@@ -1510,7 +1510,7 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
+                    "username": "sebastian@phpunit.de",
                     "role": "lead"
                 }
             ],
@@ -1559,7 +1559,7 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
+                    "username": "sebastian@phpunit.de",
                     "role": "lead"
                 }
             ],
@@ -1609,7 +1609,7 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de"
+                    "username": "sebastian@phpunit.de"
                 }
             ],
             "description": "Wrapper around PHP's tokenizer extension.",
@@ -1689,7 +1689,7 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
+                    "username": "sebastian@phpunit.de",
                     "role": "lead"
                 }
             ],
@@ -1750,7 +1750,7 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de"
+                    "username": "sebastian@phpunit.de"
                 }
             ],
             "description": "Looks up which function or method a line of code belongs to",
@@ -1797,19 +1797,19 @@
             "authors": [
                 {
                     "name": "Jeff Welch",
-                    "email": "whatthejeff@gmail.com"
+                    "username": "whatthejeff@gmail.com"
                 },
                 {
                     "name": "Volker Dusch",
-                    "email": "github@wallbash.com"
+                    "username": "github@wallbash.com"
                 },
                 {
                     "name": "Bernhard Schussek",
-                    "email": "bschussek@2bepublished.at"
+                    "username": "bschussek@2bepublished.at"
                 },
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de"
+                    "username": "sebastian@phpunit.de"
                 }
             ],
             "description": "Provides the functionality to compare PHP values for equality",
@@ -1860,11 +1860,11 @@
             "authors": [
                 {
                     "name": "Kore Nordmann",
-                    "email": "mail@kore-nordmann.de"
+                    "username": "mail@kore-nordmann.de"
                 },
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de"
+                    "username": "sebastian@phpunit.de"
                 }
             ],
             "description": "Diff implementation",
@@ -1918,7 +1918,7 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de"
+                    "username": "sebastian@phpunit.de"
                 }
             ],
             "description": "Provides functionality to handle HHVM/PHP environments",
@@ -1970,23 +1970,23 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de"
+                    "username": "sebastian@phpunit.de"
                 },
                 {
                     "name": "Jeff Welch",
-                    "email": "whatthejeff@gmail.com"
+                    "username": "whatthejeff@gmail.com"
                 },
                 {
                     "name": "Volker Dusch",
-                    "email": "github@wallbash.com"
+                    "username": "github@wallbash.com"
                 },
                 {
                     "name": "Adam Harvey",
-                    "email": "aharvey@php.net"
+                    "username": "aharvey@php.net"
                 },
                 {
                     "name": "Bernhard Schussek",
-                    "email": "bschussek@gmail.com"
+                    "username": "bschussek@gmail.com"
                 }
             ],
             "description": "Provides the functionality to export PHP variables for visualization",
@@ -2041,7 +2041,7 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de"
+                    "username": "sebastian@phpunit.de"
                 }
             ],
             "description": "Snapshotting of global state",
@@ -2091,7 +2091,7 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de"
+                    "username": "sebastian@phpunit.de"
                 }
             ],
             "description": "Traverses array structures and object graphs to enumerate all referenced objects",
@@ -2136,7 +2136,7 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de"
+                    "username": "sebastian@phpunit.de"
                 }
             ],
             "description": "Allows reflection of object attributes, including inherited and non-public ones",
@@ -2181,15 +2181,15 @@
             "authors": [
                 {
                     "name": "Jeff Welch",
-                    "email": "whatthejeff@gmail.com"
+                    "username": "whatthejeff@gmail.com"
                 },
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de"
+                    "username": "sebastian@phpunit.de"
                 },
                 {
                     "name": "Adam Harvey",
-                    "email": "aharvey@php.net"
+                    "username": "aharvey@php.net"
                 }
             ],
             "description": "Provides functionality to recursively process PHP variables",
@@ -2231,7 +2231,7 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de"
+                    "username": "sebastian@phpunit.de"
                 }
             ],
             "description": "Provides a list of PHP built-in functions that operate on resources",
@@ -2276,7 +2276,7 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
+                    "username": "sebastian@phpunit.de",
                     "role": "lead"
                 }
             ],
@@ -2319,7 +2319,7 @@
             "authors": [
                 {
                     "name": "Sebastian Bergmann",
-                    "email": "sebastian@phpunit.de",
+                    "username": "sebastian@phpunit.de",
                     "role": "lead"
                 }
             ],
@@ -2372,7 +2372,7 @@
             "authors": [
                 {
                     "name": "Gert de Pagter",
-                    "email": "BackEndTea@gmail.com"
+                    "username": "BackEndTea@gmail.com"
                 },
                 {
                     "name": "Symfony Community",
@@ -2436,7 +2436,7 @@
             "authors": [
                 {
                     "name": "Arne Blankerts",
-                    "email": "arne@blankerts.de",
+                    "username": "arne@blankerts.de",
                     "role": "Developer"
                 }
             ],
@@ -2481,7 +2481,7 @@
             "authors": [
                 {
                     "name": "Bernhard Schussek",
-                    "email": "bschussek@gmail.com"
+                    "username": "bschussek@gmail.com"
                 }
             ],
             "description": "Assertions to validate method input/output with nice error messages.",

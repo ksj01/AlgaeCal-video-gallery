@@ -2,7 +2,7 @@
     <div class="container">
         <div>
             <b-card>
-                Welcome To Our Video Library, Please Log In
+                {{ title }}
                 <b-form @submit="onSubmit">
                     <b-form-group
                             id="input-group-1"
@@ -11,13 +11,22 @@
                     >
                         <b-form-input
                                 id="input-1"
-                                v-model="form.email"
-                                type="email"
+                                v-model="form.username"
+                                type="text"
                                 required
-                                placeholder="Enter email"
+                                placeholder="Enter username"
                         ></b-form-input>
+                        <b-form-checkbox
+                                id="checkbox-1"
+                                v-model="form.remember"
+                                name="checkbox-1"
+                                value="remember"
+                                unchecked-value="forget"
+                        >
+                            Remember Me
+                        </b-form-checkbox>
                     </b-form-group>
-                    <b-button type="submit" variant="primary">Submit</b-button>
+                    <b-button type="submit" variant="algaecal" :disabled="(form.username.length < 3)">Submit</b-button>
                 </b-form>
             </b-card>
         </div>
@@ -29,8 +38,11 @@
     name: 'LoginForm',
     data() {
       return {
+        title: "Welcome To Our Video Library, Please Log In",
+        isDisabled: true,
         form: {
-          email: ''
+          username: '',
+          remember: false,
         },
       };
     },
@@ -80,4 +92,17 @@
     .links {
         padding-top: 15px;
     }
+
+    .btn-algaecal {
+        color: #fff;
+        background-color: #027d61;
+        border-color: #015542;
+    }
+
+    .btn-algaecal:hover {
+        color: #fff;
+        background-color: #013227;
+    }
+
+
 </style>

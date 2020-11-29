@@ -12,12 +12,12 @@
     "authors": [
         {
             "name": "Josh Lockhart",
-            "email": "info@joshlockhart.com",
+            "username": "info@joshlockhart.com",
             "homepage": "http://www.joshlockhart.com/"
         },
         {
             "name": "Pierre Berube",
-            "email": "pierre@lgse.com",
+            "username": "pierre@lgse.com",
             "homepage": "http://www.lgse.com/"
         }
     ],
