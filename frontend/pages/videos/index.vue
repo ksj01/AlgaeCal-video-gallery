@@ -16,10 +16,19 @@
         </b-list-group>
       </div>
     </div>
+    <div>
+      <ul>
+        <li v-for="video in videos" :key="video.id">
+          <label :for="video.id">{{ video }}</label>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
 <script>
+  import { mapMutations } from 'vuex'
+
 export default {
   data() {
     return {
@@ -32,6 +41,21 @@ export default {
     onSubmit(){
       console.log('A form was submitted');
     },
+    addTodo (event) {
+      this.$store.commit('todos/add', event.target.value)
+      event.target.value = ''
+    },
+    ...mapMutations({
+      toggle: 'todos/toggle'
+    }),
+    removeTodo (todo){
+      this.$store.commit('todos/remove', todo)
+    }
+    },
+  computed: {
+    videos () {
+      return this.$store.state.videos.list
+    }
   }
 }
 </script>
