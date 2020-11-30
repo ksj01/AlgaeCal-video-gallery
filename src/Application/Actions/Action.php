@@ -10,6 +10,10 @@ use Psr\Log\LoggerInterface;
 use Slim\Exception\HttpBadRequestException;
 use Slim\Exception\HttpNotFoundException;
 
+/**
+ * Class Action
+ * @package App\Application\Actions
+ */
 abstract class Action
 {
     /**
@@ -97,11 +101,14 @@ abstract class Action
         return $this->args[$name];
     }
 
-    /**
-     * @param  array|object|null $data
-     * @return Response
-     */
-    protected function respondWithData($data = null, int $statusCode = 200): Response
+
+	/**
+	 * @param null $data
+	 * @param int|null $statusCode
+	 *
+	 * @return Response
+	 */
+	protected function respondWithData($data = null, int $statusCode = null): Response
     {
         $payload = new ActionPayload($statusCode, $data);
 

@@ -17,6 +17,6 @@ class ViewUserAction extends UserAction
 
         $this->logger->info("User of id `${userId}` was viewed.");
 
-        return $this->respondWithData($user);
+        return $this->respondWithData($user, $this->response->getStatusCode());
     }
 }

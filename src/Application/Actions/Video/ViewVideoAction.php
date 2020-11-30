@@ -17,6 +17,6 @@ class ViewVideoAction extends VideoAction
 
         $this->logger->info("Video of id `${videoId}` was viewed.");
 
-        return $this->respondWithData($video);
+        return $this->respondWithData($video, $this->response->getStatusCode());
     }
 }

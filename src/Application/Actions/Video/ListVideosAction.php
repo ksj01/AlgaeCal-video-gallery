@@ -16,6 +16,6 @@ class ListVideosAction extends VideoAction
 
         $this->logger->info("Videos list was viewed.");
 
-        return $this->respondWithData($videos);
+        return $this->respondWithData($videos, $this->response->getStatusCode());
     }
 }

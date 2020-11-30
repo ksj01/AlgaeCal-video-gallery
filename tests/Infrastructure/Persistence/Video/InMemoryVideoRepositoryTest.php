@@ -12,7 +12,8 @@ class InMemoryVideoRepositoryTest extends TestCase
 {
     public function testFindAll()
     {
-        $video = new Video(1, 'bill.gates', 'Bill', 'Gates');
+        $video = new Video(1, 'What It\'s Like To Work At AlgaeCal', '', 'Discover what it\'s like to work at AlgaeCal with this quick video!', 'm3ralniniq');
+
 
         $videoRepository = new InMemoryVideoRepository([1 => $video]);
 
@@ -38,7 +39,7 @@ class InMemoryVideoRepositoryTest extends TestCase
 
     public function testFindVideoOfId()
     {
-        $video = new Video(1, 'bill.gates', 'Bill', 'Gates');
+        $video = new Video(1, 'What It\'s Like To Work At AlgaeCal', '', 'Discover what it\'s like to work at AlgaeCal with this quick video!', 'm3ralniniq');
 
         $videoRepository = new InMemoryVideoRepository([1 => $video]);
 

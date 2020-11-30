@@ -42,6 +42,7 @@ class InMemoryVideoRepository implements VideoRepository
 
     /**
      * {@inheritdoc}
+     * @throws VideoNotFoundException
      */
     public function findVideoOfId(int $id): Video
     {
