@@ -13,7 +13,7 @@
                     <b-nav-item right>
                         <!-- Using 'button-content' slot -->
                         <NuxtLink to="/">Videos</NuxtLink>
-                        <NuxtLink to="/">Logout</NuxtLink>
+                        <NuxtLink @click.native="logout" to="/login">Logout</NuxtLink>
                     </b-nav-item>
                 </b-navbar-nav>
             </b-collapse>
@@ -22,7 +22,13 @@
 </template>
 
 <script>
-
+  export default {
+    methods: {
+      logout() {
+        this.$store.commit('loginStore/logout');
+      }
+    }
+  };
 </script>
 
 <style>

@@ -26,7 +26,8 @@
                             Remember Me
                         </b-form-checkbox>
                     </b-form-group>
-                    <b-button type="submit" variant="algaecal" :disabled="(form.username.length < 3)">Submit</b-button>
+                    <b-button variant="algaecal" :disabled="(form.username.length < 3)" @click="login">Submit</b-button>
+                    <p>Counter: {{this.$store.state.loginStore.userID}}</p>
                 </b-form>
             </b-card>
         </div>
@@ -50,6 +51,14 @@
       onSubmit(){
         console.log('A form was submitted');
       },
+      login() {
+        //Send API request to verify username here
+
+        //If valid:
+        this.$store.commit('loginStore/login', this.form.username);
+
+        //else: Throw catch exception
+      }
     }
   };
 </script>

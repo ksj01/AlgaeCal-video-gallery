@@ -27,7 +27,6 @@
 </template>
 
 <script>
-  import { mapMutations } from 'vuex'
 
 export default {
   data() {
@@ -38,26 +37,11 @@ export default {
     };
   },
   methods: {
-    onSubmit(){
-      console.log('A form was submitted');
-    },
-    addTodo (event) {
-      this.$store.commit('todos/add', event.target.value)
-      event.target.value = ''
-    },
-    ...mapMutations({
-      toggle: 'todos/toggle'
-    }),
-    removeTodo (todo){
-      this.$store.commit('todos/remove', todo)
-    }
-    },
-  computed: {
-    videos () {
-      return this.$store.state.videos.list
+    getVideos() {
+      //API call to the videos
     }
   }
-}
+};
 </script>
 
 <style>
