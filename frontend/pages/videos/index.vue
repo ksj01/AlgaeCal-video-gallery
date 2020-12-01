@@ -11,7 +11,7 @@
             </b-dropdown>
         </b-row>
         <b-row cols="1" cols-sm="2" cols-md="3" class="w-75 m-auto" align-h="around">
-            <VideoSummary v-for="video in video_list" :key="video.id" :video_id="video.video_id" :title="video.title" :category="video.category" :description="video.description"></VideoSummary>
+            <VideoSummary no-prefetch v-for="video in video_list" :key="video.id" :video_id="video.video_id" :title="video.title" :category="video.category" :description="video.description"></VideoSummary>
         </b-row>
     </b-container>
 
@@ -41,8 +41,17 @@
       VideoSummary,
     },
     created() {
-      this.getVideos();
-    },
+      console.log(this.$store.state.loginStore);
+      if (this.$store.state.loginStore.userID == null) {
+        this.$router.push({
+          path: "/login"
+        });
+      } else {
+        this.getVideos();
+      }
+
+    }
+
   };
 </script>
 

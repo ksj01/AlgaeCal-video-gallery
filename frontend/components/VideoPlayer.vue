@@ -8,8 +8,10 @@
             </b-row>
         </b-container>
         <b-container>
-            <h4>Video Player</h4>
-            <div :class="'wistia_embed wistia_async_' + this.video_id" style="height:360px;position:relative;width:640px"></div>
+            <h4 vartical-align="top">Video Player</h4>
+
+                <div :class="'wistia_embed wistia_async_' + this.video_id" height="360" width="640" style="height:360px;position:relative;width:640px"></div>
+
             <h4>{{video.title}}</h4>
             <h5>{{video.description}}</h5>
         </b-container>
@@ -21,10 +23,7 @@
     head() {
       return {
         script: [
-          {
-            src:
-                'https://fast.wistia.com/assets/external/E-v1.js', defer: true,
-          },
+          { src: 'https://fast.wistia.com/assets/external/E-v1.js', defer: true },
         ],
       };
     },
@@ -36,13 +35,11 @@
       };
     },
     methods: {},
-    beforeMount() {
+    beforeCreate() {
       window._wq = window._wq || [];
       this.video_id = this.$route.params.id;
     },
-
-    mounted() {
-      getVideo: {
+    beforeMount() {
 
         fetch('http://localhost:8080/videos/' + this.video_id).then(response => response.json()).then(responseData => {
           if (responseData.statusCode === 200) {
@@ -53,6 +50,10 @@
         }).then(
             _wq.push({
               id: this.video_id,
+              embedded: function(video) {
+                console.log("I got a handle to the video!", video);
+              },
+
               options: {
                 videoFoam: true,
                 playerColor: '#047D61',
@@ -69,7 +70,10 @@
                 plugin: {},
               },
             }));
-      }
+    },
+
+    mounted() {
+
     },
 
   };

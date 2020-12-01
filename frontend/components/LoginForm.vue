@@ -23,7 +23,7 @@
                                 dismissible
                                 @dismissed="dismissed"
                         >
-                            Hello {{ name }}!
+                            Hello {{ form.username }}!
                         </b-alert>
                         </b-form-row>
                         <b-form-row>
@@ -66,9 +66,15 @@
       },
       login() {
         //Send API request to verify username here
-
+        fetch('http://localhost:8080/users?username=' + this.form.username).then(response => response.json()).then(responseData => {
+          if (responseData.statusCode === 200) {
+            this.$store.commit('loginStore/login', this.form.username);
+          } else {
+            alert('failure');
+          }
+        });
         //If valid:
-        this.$store.commit('loginStore/login', this.form.username);
+
 
         //else: Throw catch exception
         //toggle();
