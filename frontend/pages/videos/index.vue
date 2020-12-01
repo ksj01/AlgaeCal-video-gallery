@@ -11,7 +11,7 @@
             </b-dropdown>
         </b-row>
         <b-row cols="1" cols-sm="2" cols-md="3" class="w-75 m-auto" align-h="around">
-            <VideoSummary v-for="video in videos" :key="video.id" :video_id="video.video_id" :title="video.title" :category="video.category" :description="video.description"></VideoSummary>
+            <VideoSummary v-for="video in video_list" :key="video.id" :video_id="video.video_id" :title="video.title" :category="video.category" :description="video.description"></VideoSummary>
         </b-row>
     </b-container>
 
@@ -23,14 +23,14 @@
   export default {
     data() {
       return {
-        videos: null,
+        video_list: null,
       };
     },
     methods: {
       getVideos() {
         fetch('http://localhost:8080/videos').then(response => response.json()).then(responseData => {
           if (responseData.statusCode == 200) {
-            this.videos = responseData.data;
+            this.video_list = responseData.data;
           } else {
             alert('failure');
           }

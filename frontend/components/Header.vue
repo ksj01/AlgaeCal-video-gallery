@@ -10,24 +10,21 @@
                     </b-navbar-brand>
                 </b-row>
             </b-container>
-            <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
             <b-container fluid>
-                <b-row align-h="left">
-            <b-collapse id="nav-collapse" is-nav>
 
-                <!-- Right aligned nav items -->
-                <b-navbar-nav class="ml-auto">
+                        <!-- Right aligned nav items -->
+                        <b-navbar-nav class="m-auto">
 
-                    <b-nav-item right>
+                            <b-nav-item right>
 
-                            <!-- Using 'button-content' slot -->
-                            <NuxtLink to="/">Videos</NuxtLink>
-                            <NuxtLink @click.native="logout" to="/login">Logout</NuxtLink>
+                                <!-- Using 'button-content' slot -->
 
-                    </b-nav-item>
-                </b-navbar-nav>
-            </b-collapse>
-                </b-row>
+<!--                                TODO: I have NO IDEA why, but this particular /videos link REFUSES to be a nuxtlink. It keeps breaking the rendering on the individual video page.-->
+                                <a href="/videos" class="pr-5">Videos</a>
+                                <nuxt-link @click.native="logout" to="/login">Logout</nuxt-link>
+
+                            </b-nav-item>
+                        </b-navbar-nav>
             </b-container>
         </b-navbar>
     </div>

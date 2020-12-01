@@ -1,7 +1,7 @@
 <template>
 
     <b-col class="mb-4">
-        <NuxtLink  :to="'./videos/' + this.video_id">
+        <nuxt-link  :to="'/videos/' + this.video_id">
             <div class="img-overlay-wrap">
 
                 <b-img class="boxy-brown" fluid src="/green.png" width="330" height="205"></b-img>
@@ -20,7 +20,7 @@
             <b-card-text style="max-width: 330px; line-height: 20px">
                 <p>{{description}}</p>
             </b-card-text>
-        </NuxtLink>
+        </nuxt-link>
     </b-col>
 
 </template>

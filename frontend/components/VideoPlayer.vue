@@ -1,11 +1,16 @@
 <template>
     <div>
-        <b-container fluid>Back</b-container>
+        <b-container fluid>
+            <b-row class="left" style="margin-left: calc(12.5% + 15px); width: 330px;">
+
+<!--                TODO: That weird rendering break issue is happening with this link as well. Maybe it's a pre-fetching thing with a sort of circular link? I don't know.                &ndash;&gt;-->
+            <a href="/videos">Back</a>
+            </b-row>
+        </b-container>
         <b-container>
             <h4>Video Player</h4>
             <div :class="'wistia_embed wistia_async_' + this.video_id" style="height:360px;position:relative;width:640px"></div>
-<!--        <b-embed type="iframe" :src="'https://fast.wistia.net/embed/iframe/' + video.video_id" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" allowfullscreen mozallowfullscreen webkitallowfullscreen oallowfullscreen msallowfullscreen width="640" height="360">></b-embed>-->
-        <h4>{{video.title}}</h4>
+            <h4>{{video.title}}</h4>
             <h5>{{video.description}}</h5>
         </b-container>
     </div>
@@ -18,21 +23,19 @@
         script: [
           {
             src:
-                'https://fast.wistia.com/assets/external/E-v1.js', defer: true
-          }
+                'https://fast.wistia.com/assets/external/E-v1.js', defer: true,
+          },
         ],
-      }
+      };
     },
     name: 'VideoPlayer',
     data() {
       return {
         video_id: '',
-        video: []
+        video: [],
       };
     },
-    methods: {
-
-    },
+    methods: {},
     beforeMount() {
       window._wq = window._wq || [];
       this.video_id = this.$route.params.id;
@@ -47,28 +50,25 @@
           } else {
             alert('failure');
           }
-        })
-            .then(
-        _wq.push({
-          id: this.$route.params.id,
-          options: {
-            videoFoam: true,
-            playerColor: "ccc",
-            playButton: true,
-            playbar: false,
-            playbackRateControl: false,
-            preload: false,
-            qualityControl: false,
-            settingsControl: false,
-            smallPlayButton: false,
-            volumeControl: false,
-            fullscreenButton: false,
-            stillUrl: false,
-            wmode: 'transparent',
-            plugin: {
-            }
-          }
-        }));
+        }).then(
+            _wq.push({
+              id: this.video_id,
+              options: {
+                videoFoam: true,
+                playerColor: '#047D61',
+                playButton: true,
+                playbar: false,
+                playbackRateControl: false,
+                qualityControl: false,
+                settingsControl: false,
+                smallPlayButton: false,
+                volumeControl: false,
+                fullscreenButton: false,
+                stillUrl: false,
+                wmode: 'transparent',
+                plugin: {},
+              },
+            }));
       }
     },
 
