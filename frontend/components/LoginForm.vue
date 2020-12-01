@@ -16,6 +16,14 @@
                                 required
                                 placeholder="Enter username"
                         ></b-form-input>
+                        <b-alert
+                                v-model="show"
+                                class="mt-3"
+                                dismissible
+                                @dismissed="dismissed"
+                        >
+                            Hello {{ name }}!
+                        </b-alert>
                         <b-form-checkbox
                                 id="checkbox-1"
                                 v-model="form.remember"
@@ -41,6 +49,7 @@
       return {
         title: "Welcome To Our Video Library, Please Log In",
         isDisabled: true,
+        show: false,
         form: {
           username: '',
           remember: false,
@@ -58,6 +67,14 @@
         this.$store.commit('loginStore/login', this.form.username);
 
         //else: Throw catch exception
+        //toggle();
+      },
+      toggle() {
+        console.log('Toggle button clicked')
+        this.show = !this.show
+      },
+      dismissed() {
+        console.log('Alert dismissed')
       }
     }
   };

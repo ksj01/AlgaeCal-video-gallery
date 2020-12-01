@@ -1,13 +1,8 @@
 <template>
 
     <b-container fluid>
-        <b-row>
-            <b-col>
-                <h1>Welcome to Our Video Library</h1>
-            </b-col>
-        </b-row>
-        <b-row>
-            <b-dropdown id="dropdown-1" text="Dropdown Button" class="m-md-2">
+        <b-row class="left" style="margin-left: calc(12.5% + 15px); width: 330px;">
+            <b-dropdown id="dropdown-1" text="Video Filter" class="rounded border border-dark my-5" width="330" variant="outline" style="width: 330px" menu-class="w-100">
                 <b-dropdown-item>Cras justo odio</b-dropdown-item>
                 <b-dropdown-item>Dapibus ac facilisis in</b-dropdown-item>
                 <b-dropdown-item>Morbi leo risus</b-dropdown-item>
@@ -88,5 +83,9 @@
 
     .links {
         padding-top: 15px;
+    }
+
+    #dropdown-1__BV_toggle_ {
+        text-align: left;
     }
 </style>
