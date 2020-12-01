@@ -12,7 +12,7 @@ class ViewVideoAction extends VideoAction
      */
     protected function action(): Response
     {
-	    $videoId = (int) $this->resolveArg('id');
+	    $videoId = (string) $this->resolveArg('id');
         $video = $this->videoRepository->findVideoOfId($videoId);
 
         $this->logger->info("Video of id `${videoId}` was viewed.");

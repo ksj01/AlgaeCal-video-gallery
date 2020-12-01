@@ -43,10 +43,10 @@ class Video implements JsonSerializable
     public function __construct(?int $id, string $title, string $category, string $description, string $video_id)
     {
         $this->id          = $id;
-        $this->title       = strtolower($title);
-        $this->category    = strtolower($category);
-        $this->description = strtolower($description);
-        $this->video_id    = strtolower($video_id);
+        $this->title       = $title;
+        $this->category    = $category;
+        $this->description = $description;
+        $this->video_id    = $video_id;
     }
 
     /**
@@ -102,4 +102,13 @@ class Video implements JsonSerializable
             'video_id' => $this->video_id,
         ];
     }
+
+	public function __get( $prop ) {
+		return $this->$prop;
+	}
+
+	public function __isset($prop) : bool
+	{
+		return isset($this->$prop);
+	}
 }

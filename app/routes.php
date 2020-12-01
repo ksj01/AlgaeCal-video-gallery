@@ -28,6 +28,6 @@ return function (App $app) {
 
     $app->group('/videos', function (Group $group) {
         $group->get('', ListVideosAction::class);
-        $group->get('/{$video_id}', ViewVideoAction::class);
+        $group->get('/{id}', ViewVideoAction::class);
     });
 };

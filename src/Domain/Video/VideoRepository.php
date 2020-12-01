@@ -11,10 +11,10 @@ interface VideoRepository
     public function findAll(): array;
 
     /**
-     * @param int $id
+     * @param string $video_id
      *
      * @return Video
      * @throws VideoNotFoundException
      */
-    public function findVideoOfId(int $id): Video;
+    public function findVideoOfId(string $video_id): Video;
 }

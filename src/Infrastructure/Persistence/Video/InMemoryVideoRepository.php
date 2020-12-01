@@ -44,12 +44,18 @@ class InMemoryVideoRepository implements VideoRepository
      * {@inheritdoc}
      * @throws VideoNotFoundException
      */
-    public function findVideoOfId(int $id): Video
+    public function findVideoOfId(string $video_id): Video
     {
-        if (!isset($this->videos[$id])) {
+	    $discovered_index = array_search($video_id, array_column($this->videos, 'video_id'));
+	    //Compensate for the associative array starting at 1.
+	    $discovered_index += 1;
+
+	    $retrieved_video = $this->videos[$discovered_index];
+
+        if (!isset($this->videos[$discovered_index]) || ($retrieved_video->getVideoID() !== $video_id)) {
             throw new VideoNotFoundException();
         }
 
-        return $this->videos[$id];
+        return $retrieved_video;
     }
 }
