@@ -88,4 +88,9 @@
     #dropdown-1__BV_toggle_ {
         text-align: left;
     }
+
+    .dropdown-toggle::after {
+        margin-left: 14em;
+        margin-top: 0.6em;
+    }
 </style>

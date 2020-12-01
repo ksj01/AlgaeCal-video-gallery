@@ -16,5 +16,7 @@ export default {
 </script>
 
 <style>
-
+  #login {
+    background-color: #013B2F;
+  }
 </style>

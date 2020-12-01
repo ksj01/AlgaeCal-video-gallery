@@ -2,40 +2,44 @@
     <div class="container">
         <div>
             <b-card>
-                {{ title }}
+                <h2 class="m-4">{{ title }}</h2>
                 <b-form @submit="onSubmit">
                     <b-form-group
+                            class="mx-5"
                             id="input-group-1"
-                            label="Email address:"
                             label-for="input-1"
                     >
+                        <b-form-row>
                         <b-form-input
                                 id="input-1"
                                 v-model="form.username"
                                 type="text"
                                 required
-                                placeholder="Enter username"
+                                placeholder="Your Username"
                         ></b-form-input>
                         <b-alert
                                 v-model="show"
-                                class="mt-3"
+                                class="mt-2"
                                 dismissible
                                 @dismissed="dismissed"
                         >
                             Hello {{ name }}!
                         </b-alert>
+                        </b-form-row>
+                        <b-form-row>
                         <b-form-checkbox
                                 id="checkbox-1"
                                 v-model="form.remember"
                                 name="checkbox-1"
                                 value="remember"
                                 unchecked-value="forget"
+                                class="my-3"
                         >
                             Remember Me
                         </b-form-checkbox>
+                        </b-form-row>
                     </b-form-group>
-                    <b-button variant="algaecal" :disabled="(form.username.length < 3)" @click="login">Submit</b-button>
-                    <p>Counter: {{this.$store.state.loginStore.userID}}</p>
+                    <b-button pill size="sm" class="px-5" variant="algaecal" :disabled="(form.username.length < 3)" @click="login">Login</b-button>
                 </b-form>
             </b-card>
         </div>
@@ -47,7 +51,7 @@
     name: 'LoginForm',
     data() {
       return {
-        title: "Welcome To Our Video Library, Please Log In",
+        title: "User Login",
         isDisabled: true,
         show: false,
         form: {
@@ -103,7 +107,7 @@
         display: block;
         font-weight: 300;
         font-size: 100px;
-        color: #35495e;
+        color: #047D61;
         letter-spacing: 1px;
     }
 
@@ -121,13 +125,13 @@
 
     .btn-algaecal {
         color: #fff;
-        background-color: #027d61;
-        border-color: #015542;
+        background-color: #047D61;
+        border-color: #047D61;
     }
 
     .btn-algaecal:hover {
         color: #fff;
-        background-color: #013227;
+        background-color: #013B2F;
     }
 
 
