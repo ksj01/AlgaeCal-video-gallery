@@ -28,6 +28,7 @@ class UserTest extends TestCase
      */
     public function testGetters($id, $username, $firstName, $lastName)
     {
+
         $user = new User($id, $username, $firstName, $lastName);
 
         $this->assertEquals($id, $user->getId());
