@@ -42,14 +42,13 @@ class InMemoryVideoRepositoryTest extends TestCase
         $video = new Video(1, 'What It\'s Like To Work At AlgaeCal', '', 'Discover what it\'s like to work at AlgaeCal with this quick video!', 'm3ralniniq');
 
         $videoRepository = new InMemoryVideoRepository([1 => $video]);
-
-        $this->assertEquals($video, $videoRepository->findVideoOfId(1));
+        $this->assertEquals($video, $videoRepository->findVideoOfId('m3ralniniq'));
     }
 
     public function testFindVideoOfIdThrowsNotFoundException()
     {
         $videoRepository = new InMemoryVideoRepository([]);
         $this->expectException(VideoNotFoundException::class);
-        $videoRepository->findVideoOfId(1);
+        $videoRepository->findVideoOfId('m3ralniniq');
     }
 }

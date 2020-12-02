@@ -50,12 +50,13 @@ class InMemoryVideoRepository implements VideoRepository
 	    //Compensate for the associative array starting at 1.
 	    $discovered_index += 1;
 
-	    $retrieved_video = $this->videos[$discovered_index];
+	    if (array_key_exists($discovered_index, $this->videos)) {
+		    $retrieved_video = $this->videos[ $discovered_index ];
+		    if ( isset( $this->videos[ $discovered_index ] ) && ( $retrieved_video->getVideoID() === $video_id ) ) {
+			    return $retrieved_video;
+		    }
+	    }
+	    throw new VideoNotFoundException();
 
-        if (!isset($this->videos[$discovered_index]) || ($retrieved_video->getVideoID() !== $video_id)) {
-            throw new VideoNotFoundException();
-        }
-
-        return $retrieved_video;
     }
 }
