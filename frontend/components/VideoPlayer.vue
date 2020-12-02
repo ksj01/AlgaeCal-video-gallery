@@ -10,7 +10,7 @@
             <h4>{{title}}</h4>
 
 <!--            Required for Wistia's embedded videos.-->
-            <div :class="'wistia_embed wistia_async_' + this.video_id" height="360" width="640"></div>
+            <div :class="'wistia_embed wistia_async_' + this.video_id"></div>
 
             <h4>{{video.title}}</h4>
             <h5>{{video.description}}</h5>

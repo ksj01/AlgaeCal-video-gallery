@@ -44,8 +44,8 @@
 
       //Display more than the 6 initial videos. Note: This is not fledged out and is pretty much just for display purposes
       showMore() {
-        var cards = document.getElementsByClassName('mb-4 video-preview col');
-        for (var i = 0; i < cards.length; i++) {
+        let cards = document.getElementsByClassName('mb-4 video-preview col');
+        for (let i = 0; i < cards.length; i++) {
           cards[i].style.removeProperty('display');
         }
         document.getElementById('show-button').style.setProperty('display', 'none');
@@ -55,7 +55,7 @@
         fetch('http://localhost:8080/videos')
         .then(response => response.json())
         .then(responseData => {
-          if (responseData.statusCode == 200) {
+          if (responseData.statusCode === 200) {
             this.video_list = responseData.data;
           }
         }).catch(error => alert(error));
