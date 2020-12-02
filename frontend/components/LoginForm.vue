@@ -32,6 +32,8 @@
                             </b-alert>
                         </b-form-row>
                         <b-form-row>
+
+<!--                            This isn't actually configured to do anything.-->
                             <b-form-checkbox
                                     id="checkbox-1"
                                     v-model="form.remember"
@@ -70,28 +72,30 @@
         this.dismissed();
       },
       login() {
+
         //Send API request to verify username here
-          fetch('http://localhost:8080/users?username=' + this.form.username)
-          .then(response => response.json())
-          .then(responseData => {
-            if (responseData.statusCode === 200) {
-              this.$store.commit('loginStore/login', this.form.username);
-            } else {
-              this.toggle();
-            }
-          })
-          .catch(error => alert(error.message));
+        fetch('http://localhost:8080/users?username=' + this.form.username).then(response => response.json()).then(responseData => {
+          if (responseData.statusCode === 200) {
+            this.$store.commit('loginStore/login', this.form.username);
+          } else {
+            //Display username alert
+            this.toggle();
+          }
+        }).catch(error => alert(error.message));
       },
 
-    toggle() {
-      this.show = !this.show;
-    },
-    dismissed() {
+      //Used to show the invalid username alert
+      toggle() {
+        this.show = !this.show;
+      },
+
+      //Dismisses the invalid username alert
+      dismissed() {
         if (document.getElementById('invalid-username')) {
           document.getElementById('invalid-username').childNodes[0].click();
         }
+      },
     },
-  }
   }
   ;
 </script>
@@ -105,46 +109,5 @@
         align-items: center;
         text-align: center;
     }
-
-    .title {
-        font-family: 'Quicksand',
-        'Source Sans Pro',
-        -apple-system,
-        BlinkMacSystemFont,
-        'Segoe UI',
-        Roboto,
-        'Helvetica Neue',
-        Arial,
-        sans-serif;
-        display: block;
-        font-weight: 300;
-        font-size: 100px;
-        color: #047D61;
-        letter-spacing: 1px;
-    }
-
-    .subtitle {
-        font-weight: 300;
-        font-size: 42px;
-        color: #526488;
-        word-spacing: 5px;
-        padding-bottom: 15px;
-    }
-
-    .links {
-        padding-top: 15px;
-    }
-
-    .btn-algaecal {
-        color: #fff;
-        background-color: #047D61;
-        border-color: #047D61;
-    }
-
-    .btn-algaecal:hover {
-        color: #fff;
-        background-color: #013B2F;
-    }
-
 
 </style>

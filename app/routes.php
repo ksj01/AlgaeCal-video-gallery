@@ -16,13 +16,6 @@ return function (App $app) {
         return $response;
     });
 
-//    $app->group('/', function (Group $group) {
-//	    $group->get('{any}', function (Request $request, Response $response) {
-//		    return $response;
-//	    });
-//    });
-
-
     $app->get('/', function (Request $request, Response $response) {
         $response->getBody()->write('Hello world!');
         return $response;

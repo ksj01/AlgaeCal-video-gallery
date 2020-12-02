@@ -11,17 +11,13 @@
                 </b-row>
             </b-container>
             <b-container fluid>
+                <b-navbar-nav class="m-auto">
 
-                        <!-- Right aligned nav items -->
-                        <b-navbar-nav class="m-auto">
+<!--                    These function differently but I want them to be styled the same.-->
+                    <a href="/videos/" class="pr-5 custom-link">Videos</a>
+                    <a @click="logout()" class="custom-link">Logout</a>
 
-
-                                <!-- Using 'button-content' slot -->
-
-<!--                                TODO: I have NO IDEA why, but this particular /videos link REFUSES to be a nuxtlink. It keeps breaking the rendering on the individual video page.-->
-                                <a href="/videos/" class="pr-5 custom-link">Videos</a>
-                                <a @click="logout()" class="custom-link">Logout</a>
-                        </b-navbar-nav>
+                </b-navbar-nav>
             </b-container>
         </b-navbar>
     </div>

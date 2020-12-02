@@ -1,6 +1,8 @@
 <template>
 
     <b-container fluid>
+
+
         <b-row class="left" style="margin-left: calc(12.5% + 15px); width: 330px;">
             <b-dropdown id="dropdown-1" text="Video Filter" class="rounded border border-dark my-5" width="330" variant="outline" style="width: 330px" menu-class="w-100">
                 <b-dropdown-item>Video Option 1</b-dropdown-item>
@@ -13,12 +15,18 @@
                 <b-dropdown-item>Video Option 8</b-dropdown-item>
             </b-dropdown>
         </b-row>
+
+
         <b-row cols="1" cols-sm="2" cols-md="3" class="w-75 m-auto" align-h="around">
             <VideoSummary v-show="video.id <= 6" no-prefetch v-for="video in video_list" :key="video.id" :video_id="video.video_id" :title="video.title" :category="video.category" :description="video.description"></VideoSummary>
         </b-row>
+
+
         <div style="position: relative; left: 44%">
-        <b-button class="m-auto" variant="orange-more" id="show-button" @click="showMore()" style="margin-left: -15px;">Show More</b-button>
+            <b-button class="m-auto" variant="orange-more" id="show-button" @click="showMore()" style="margin-left: -15px;">Show More</b-button>
         </div>
+
+
     </b-container>
 
 </template>
@@ -33,6 +41,8 @@
       };
     },
     methods: {
+
+      //Display more than the 6 initial videos. Note: This is not fledged out and is pretty much just for display purposes
       showMore() {
         var cards = document.getElementsByClassName('mb-4 video-preview col');
         for (var i = 0; i < cards.length; i++) {
@@ -40,30 +50,23 @@
         }
         document.getElementById('show-button').style.setProperty('display', 'none');
       },
+
       getVideos() {
-        fetch('http://localhost:8080/videos').then(response => response.json()).then(responseData => {
+        fetch('http://localhost:8080/videos')
+        .then(response => response.json())
+        .then(responseData => {
           if (responseData.statusCode == 200) {
             this.video_list = responseData.data;
-          } else {
-            alert('failure');
           }
-        });
+        }).catch(error => alert(error));
       },
     },
     components: {
       VideoSummary,
     },
     created() {
-      console.log(this.$store.state.loginStore);
-      if (this.$store.state.loginStore.list === []) {
-        this.$router.push({
-          path: "/login"
-        });
-      } else {
-        this.getVideos();
-      }
-
-    }
+      this.getVideos();
+    },
 
   };
 </script>
@@ -78,35 +81,8 @@
         text-align: center;
     }
 
-    .title {
-        font-family: 'Quicksand',
-        'Source Sans Pro',
-        -apple-system,
-        BlinkMacSystemFont,
-        'Segoe UI',
-        Roboto,
-        'Helvetica Neue',
-        Arial,
-        sans-serif;
-        display: block;
-        font-weight: 300;
-        font-size: 100px;
-        color: #35495e;
-        letter-spacing: 1px;
-    }
 
-    .subtitle {
-        font-weight: 300;
-        font-size: 42px;
-        color: #526488;
-        word-spacing: 5px;
-        padding-bottom: 15px;
-    }
-
-    .links {
-        padding-top: 15px;
-    }
-
+    /*These make the dropdown bar look identical to the spec*/
     #dropdown-1__BV_toggle_ {
         text-align: left;
     }
@@ -116,6 +92,7 @@
         margin-top: 0.6em;
     }
 
+    /*This is for the orange "Show More" button*/
     .btn-orange-more {
         color: #fff;
         background-color: #EC5023;
