@@ -3,16 +3,16 @@
     <b-container fluid>
 
 
-        <b-row class="left" style="margin-left: calc(12.5% + 15px); width: 330px;">
+        <b-row class="left custom-left-align-12">
             <b-dropdown id="dropdown-1" text="Video Filter" class="rounded border border-dark my-5" width="330" variant="outline" style="width: 330px" menu-class="w-100">
-                <b-dropdown-item>Video Option 1</b-dropdown-item>
-                <b-dropdown-item>Video Option 2</b-dropdown-item>
-                <b-dropdown-item>Video Option 3</b-dropdown-item>
-                <b-dropdown-item>Video Option 4</b-dropdown-item>
-                <b-dropdown-item>Video Option 5</b-dropdown-item>
-                <b-dropdown-item>Video Option 6</b-dropdown-item>
-                <b-dropdown-item>Video Option 7</b-dropdown-item>
-                <b-dropdown-item>Video Option 8</b-dropdown-item>
+                <b-dropdown-item-button>Video Option 1</b-dropdown-item-button>
+                <b-dropdown-item-button>Video Option 2</b-dropdown-item-button>
+                <b-dropdown-item-button>Video Option 3</b-dropdown-item-button>
+                <b-dropdown-item-button>Video Option 4</b-dropdown-item-button>
+                <b-dropdown-item-button>Video Option 5</b-dropdown-item-button>
+                <b-dropdown-item-button>Video Option 6</b-dropdown-item-button>
+                <b-dropdown-item-button>Video Option 7</b-dropdown-item-button>
+                <b-dropdown-item-button>Video Option 8</b-dropdown-item-button>
             </b-dropdown>
         </b-row>
 
@@ -22,8 +22,8 @@
         </b-row>
 
 
-        <div style="position: relative; left: 44%">
-            <b-button class="m-auto" variant="orange-more" id="show-button" @click="showMore()" style="margin-left: -15px;">Show More</b-button>
+        <div class="btn-orange-more-container">
+            <b-button class="m-auto" variant="orange-more" id="show-button" @click="showMore()">Show More</b-button>
         </div>
 
 
@@ -97,5 +97,13 @@
         color: #fff;
         background-color: #EC5023;
         border-color: #EC5023;
+    }
+
+    #show-button {
+        margin-left: -15px;
+    }
+
+    .btn-orange-more-container {
+        position: relative; left: 44%;
     }
 </style>

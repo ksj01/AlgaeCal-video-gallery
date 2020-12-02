@@ -1,7 +1,7 @@
 <template>
-    <div class="container pb-5" style="max-height: 700px;">
-        <div style="min-height: 300px; width: 40%;">
-            <b-card style="height: 400px;">
+    <div class="container pb-5 login-container-main">
+        <div class="login-container-sub">
+            <b-card class="login-card">
                 <h2 class="m-4">{{ title }}</h2>
                 <b-form @submit="onSubmit">
                     <b-form-group
@@ -108,6 +108,18 @@
         justify-content: center;
         align-items: center;
         text-align: center;
+    }
+
+    .login-container-main {
+        max-height: 700px;
+    }
+
+    .login-container-main .login-container-sub {
+        min-height: 300px; width: 40%;
+    }
+
+    .login-container-main .login-container-sub .login-card {
+        height: 400px;
     }
 
 </style>

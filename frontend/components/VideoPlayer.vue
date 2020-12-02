@@ -1,7 +1,7 @@
 <template>
     <div>
         <b-container fluid>
-            <b-row class="left" style="margin-left: calc(12.5% + 15px); width: 330px;">
+            <b-row class="left custom-left-align-12">
 
                 <a href="/videos">Back</a>
             </b-row>
@@ -10,7 +10,7 @@
             <h4>{{title}}</h4>
 
 <!--            Required for Wistia's embedded videos.-->
-            <div :class="'wistia_embed wistia_async_' + this.video_id" height="360" width="640" style="height:360px;position:relative;width:640px"></div>
+            <div :class="'wistia_embed wistia_async_' + this.video_id" height="360" width="640"></div>
 
             <h4>{{video.title}}</h4>
             <h5>{{video.description}}</h5>
@@ -76,3 +76,9 @@
   };
 
 </script>
+
+<style>
+    .wistia_embed {
+        height:360px;position:relative;width:640px
+    }
+</style>

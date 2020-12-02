@@ -2,7 +2,7 @@
     <div>
         <b-navbar toggleable="lg" type="white" variant="faded">
             <b-container fluid>
-                <b-row class="left" style="margin-left: calc(25% + 7.5px); width: 330px;">
+                <b-row class="left custom-left-align-25">
                     <b-navbar-brand href="/login">
 
                         <img src="/algaecal-logo.svg" alt="Algaecal" height="50">
@@ -46,5 +46,13 @@
     .custom-link:hover {
         cursor: pointer;
         text-decoration: underline !important;
+    }
+
+    .custom-left-align-25 {
+        margin-left: calc(25% + 7.5px); width: 330px;
+    }
+
+    .custom-left-align-12 {
+        margin-left: calc(12.5% + 15px); width: 330px;
     }
 </style>

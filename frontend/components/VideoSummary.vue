@@ -8,7 +8,7 @@
             <div class="img-overlay-wrap">
                 <!--                I intentionally made this look identical to the spec. -->
                 <b-img class="boxy-brown" fluid src="/green.png" width="330" height="205"></b-img>
-                <b-button pill class="hide-me" variant="algaecal" style="position: absolute; bottom: calc(50% - 15px); left: calc(50% - 60px); width: 120px;">Watch Now</b-button>
+                <b-button pill class="hide-me hidden-watch-icon" variant="algaecal">Watch Now</b-button>
                 <!--                As much as I'd like to, I'm not going to worry about moving this out of inline-->
                 <!--                Play icon SVG-->
                 <svg class="boxy-brown" xmlns="http://www.w3.org/2000/svg" buffered-rendering="static" viewBox="-253 -150 680 410">
@@ -23,10 +23,10 @@
 
 
             <!--            Video title and description-->
-            <b-card-title class="mt-3 mb-0" style="max-width: 330px; font-size: 22px;">
+            <b-card-title class="mt-3 mb-0 vid-thumb-title">
                 {{title}}
             </b-card-title>
-            <b-card-text style="max-width: 330px; line-height: 20px">
+            <b-card-text class="vid-thumb-desc">
                 <p>{{description}}</p>
             </b-card-text>
         </a>
@@ -50,6 +50,9 @@
 
 
 <style>
+
+    /* Everything below here is basically used to make the thumbnails look and act the way they do on hover. */
+
     .card-deck {
         max-width: calc(330px - 30px);
     }
@@ -94,6 +97,18 @@
 
     .video-preview:hover .hide-me {
         display: block;
+    }
+
+    .hidden-watch-icon {
+        position: absolute; bottom: calc(50% - 15px); left: calc(50% - 60px); width: 120px;
+    }
+
+    .vid-thumb-title {
+        max-width: 330px; font-size: 22px;
+    }
+
+    .vid-thumb-desc {
+        max-width: 330px; line-height: 20px;
     }
 
 </style>
