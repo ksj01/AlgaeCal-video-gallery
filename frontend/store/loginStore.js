@@ -1,15 +1,20 @@
 export const state = () => ({
-  userID: null
+  list: [],
 });
 
-export const mutations= {
-  login(state, userID){
-        state.userID = userID;
-      this.$router.push({
-        path: "/videos"
-      });
+export const mutations = {
+  login(state, userID) {
+    state.list.push({
+      userID,
+    });
+    this.$router.push({
+      path: '/videos',
+    });
   },
   logout(state) {
-    state.userID = null;
+    state.list = [];
+    this.$router.push({
+      path: '/login',
+    });
   },
 };

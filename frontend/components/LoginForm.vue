@@ -1,7 +1,7 @@
 <template>
-    <div class="container">
-        <div>
-            <b-card>
+    <div class="container pb-5" style="max-height: 700px;">
+        <div style="min-height: 300px; width: 40%;">
+            <b-card style="height: 400px;">
                 <h2 class="m-4">{{ title }}</h2>
                 <b-form @submit="onSubmit">
                     <b-form-group
@@ -10,36 +10,41 @@
                             label-for="input-1"
                     >
                         <b-form-row>
-                        <b-form-input
-                                id="input-1"
-                                v-model="form.username"
-                                type="text"
-                                required
-                                placeholder="Your Username"
-                        ></b-form-input>
-                        <b-alert
-                                v-model="show"
-                                class="mt-2"
-                                dismissible
-                                @dismissed="dismissed"
-                        >
-                            Hello {{ form.username }}!
-                        </b-alert>
+                            <b-form-input
+                                    class="mt-4"
+                                    id="input-1"
+                                    v-model="form.username"
+                                    type="text"
+                                    required
+                                    placeholder="Your Username"
+                                    @keyup="dismissed"
+                            ></b-form-input>
+                            <b-alert
+                                    id="invalid-username"
+                                    v-model="show"
+                                    variant="danger"
+                                    fade
+                                    class="mt-2"
+                                    dismissible
+                                    @dismissed="dismissed"
+                            >
+                                Sorry, that username is not found
+                            </b-alert>
                         </b-form-row>
                         <b-form-row>
-                        <b-form-checkbox
-                                id="checkbox-1"
-                                v-model="form.remember"
-                                name="checkbox-1"
-                                value="remember"
-                                unchecked-value="forget"
-                                class="my-3"
-                        >
-                            Remember Me
-                        </b-form-checkbox>
+                            <b-form-checkbox
+                                    id="checkbox-1"
+                                    v-model="form.remember"
+                                    name="checkbox-1"
+                                    value="remember"
+                                    unchecked-value="forget"
+                                    class="my-3"
+                            >
+                                Remember Me
+                            </b-form-checkbox>
                         </b-form-row>
                     </b-form-group>
-                    <b-button pill size="sm" class="px-5" variant="algaecal" :disabled="(form.username.length < 3)" @click="login">Login</b-button>
+                    <b-button pill size="sm" class="px-5 mt-5" variant="algaecal" :disabled="(form.username.length < 3)" @click="login">Login</b-button>
                 </b-form>
             </b-card>
         </div>
@@ -51,7 +56,7 @@
     name: 'LoginForm',
     data() {
       return {
-        title: "User Login",
+        title: 'User Login',
         isDisabled: true,
         show: false,
         form: {
@@ -61,33 +66,34 @@
       };
     },
     methods: {
-      onSubmit(){
-        console.log('A form was submitted');
+      onSubmit() {
+        this.dismissed();
       },
       login() {
         //Send API request to verify username here
-        fetch('http://localhost:8080/users?username=' + this.form.username).then(response => response.json()).then(responseData => {
-          if (responseData.statusCode === 200) {
-            this.$store.commit('loginStore/login', this.form.username);
-          } else {
-            alert('failure');
-          }
-        });
-        //If valid:
-
-
-        //else: Throw catch exception
-        //toggle();
+          fetch('http://localhost:8080/users?username=' + this.form.username)
+          .then(response => response.json())
+          .then(responseData => {
+            if (responseData.statusCode === 200) {
+              this.$store.commit('loginStore/login', this.form.username);
+            } else {
+              this.toggle();
+            }
+          })
+          .catch(error => alert(error.message));
       },
-      toggle() {
-        console.log('Toggle button clicked')
-        this.show = !this.show
-      },
-      dismissed() {
-        console.log('Alert dismissed')
-      }
-    }
-  };
+
+    toggle() {
+      this.show = !this.show;
+    },
+    dismissed() {
+        if (document.getElementById('invalid-username')) {
+          document.getElementById('invalid-username').childNodes[0].click();
+        }
+    },
+  }
+  }
+  ;
 </script>
 
 <style scoped>

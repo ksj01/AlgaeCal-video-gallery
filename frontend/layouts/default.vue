@@ -11,8 +11,13 @@
     components: {
       Header
     },
-    beforeCreate() {
+    beforeMount() {
       //TODO Check if logged in. Redirect accordingly
+      if (this.$store.state.loginStore.list === []) {
+        this.$router.push({
+          path: "/login"
+        });
+      }
     }
   }
 </script>
@@ -59,4 +64,12 @@ html, body {
   color: #fff;
   background-color: #35495e;
 }
+
+  .btn-algaecal {
+    color: #fff;
+    background-color: #047D61;
+    border-color: #047D61;
+  }
+
+  .dropdown .dropdown-menu .dropdown-item:active, .dropdown .dropdown-menu .dropdown-item:hover{background-color: #047D61 !important;}
 </style>

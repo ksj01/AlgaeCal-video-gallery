@@ -36,44 +36,41 @@
     },
     methods: {},
     beforeCreate() {
-      window._wq = window._wq || [];
-      this.video_id = this.$route.params.id;
     },
     beforeMount() {
 
-        fetch('http://localhost:8080/videos/' + this.video_id).then(response => response.json()).then(responseData => {
-          if (responseData.statusCode === 200) {
-            this.video = responseData.data;
-          } else {
-            alert('failure');
-          }
-        }).then(
-            _wq.push({
-              id: this.video_id,
-              embedded: function(video) {
-                console.log("I got a handle to the video!", video);
-              },
 
-              options: {
-                videoFoam: true,
-                playerColor: '#047D61',
-                playButton: true,
-                playbar: false,
-                playbackRateControl: false,
-                qualityControl: false,
-                settingsControl: false,
-                smallPlayButton: false,
-                volumeControl: false,
-                fullscreenButton: false,
-                stillUrl: false,
-                wmode: 'transparent',
-                plugin: {},
-              },
-            }));
     },
 
     mounted() {
-
+      window._wq = window._wq || [];
+      this.video_id = this.$route.params.id;
+      console.log(this.video_id);
+      fetch('http://localhost:8080/videos/' + this.video_id).then(response => response.json()).then(responseData => {
+        if (responseData.statusCode === 200) {
+          this.video = responseData.data;
+        } else {
+          alert('failure');
+        }
+      }).then(
+          _wq.push({
+            id: this.video_id,
+            options: {
+              videoFoam: true,
+              playerColor: '#047D61',
+              playButton: true,
+              playbar: false,
+              playbackRateControl: false,
+              qualityControl: false,
+              settingsControl: false,
+              smallPlayButton: false,
+              volumeControl: false,
+              fullscreenButton: false,
+              stillUrl: false,
+              wmode: 'transparent',
+              plugin: {},
+            },
+          }));
     },
 
   };

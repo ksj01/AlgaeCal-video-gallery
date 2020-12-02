@@ -15,15 +15,12 @@
                         <!-- Right aligned nav items -->
                         <b-navbar-nav class="m-auto">
 
-                            <b-nav-item right>
 
                                 <!-- Using 'button-content' slot -->
 
 <!--                                TODO: I have NO IDEA why, but this particular /videos link REFUSES to be a nuxtlink. It keeps breaking the rendering on the individual video page.-->
-                                <a href="/videos" class="pr-5">Videos</a>
-                                <nuxt-link @click.native="logout" to="/login">Logout</nuxt-link>
-
-                            </b-nav-item>
+                                <a href="/videos/" class="pr-5 custom-link">Videos</a>
+                                <a @click="logout()" class="custom-link">Logout</a>
                         </b-navbar-nav>
             </b-container>
         </b-navbar>
@@ -31,6 +28,7 @@
 </template>
 
 <script>
+
   export default {
     methods: {
       logout() {
@@ -47,5 +45,10 @@
 
     body, a, a:hover {
         color: #013B2F;
+    }
+
+    .custom-link:hover {
+        cursor: pointer;
+        text-decoration: underline !important;
     }
 </style>
