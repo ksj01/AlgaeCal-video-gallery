@@ -56,6 +56,10 @@ export default {
     // Doc: https://bootstrap-vue.js.org
     'bootstrap-vue/nuxt'
   ],
+
+  serverMiddleware: [
+    '~/serverMiddleware/redirect.js'
+  ],
   /*
   ** Build configuration
   ** See https://nuxtjs.org/api/configuration-build/
